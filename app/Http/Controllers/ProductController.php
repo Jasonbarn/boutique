@@ -13,6 +13,8 @@ class ProductController extends Controller
     public function index()
     {
         //
+        $products = Product::all();
+        return view('detail', compact('products'));
     }
 
     /**
@@ -34,10 +36,13 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show( $id)
     {
         //
         $product = Product::findOrFail($id);
+
+        
+
     return view('detail', compact('product'));
     }
 
