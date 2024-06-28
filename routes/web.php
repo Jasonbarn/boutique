@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
@@ -22,7 +23,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/liste', [IndexController::class,'index']);//creation de la route liste avec le controller index
-Route::get('/products/{id}', [IndexController::class,'show'])->name('products.show');//creation de la route products avec id pour avoir l'identifant unique du produit
+Route::get('/products/{id}', [ProductController::class,'show'])->name('products.show');//creation de la route products avec id pour avoir l'identifant unique du produit
 
 
 require __DIR__.'/auth.php';
